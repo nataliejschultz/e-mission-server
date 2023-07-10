@@ -6,7 +6,7 @@ name: test-with-docker
 # events but only for the master branch
 on:
   push:
-    branches: [ libmamba-testing ]
+    branches: [ 'libmamba-testing' ]
   pull_request:
     branches: [ master ]
   schedule:
