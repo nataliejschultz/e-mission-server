@@ -28,7 +28,10 @@ jobs:
 
     - name: Make sure that the workflow works
       run: echo Smoke test
-
+    
+    - name: echo name
+      run: echo $DOCKER_USER/${GITHUB_REPOSITORY#*/}:${GITHUB_REF##*/}_${{ steps.date.outputs.date }}
+      
     - name: build docker image
       run: docker build -t $DOCKER_USER/${GITHUB_REPOSITORY#*/}:${GITHUB_REF##*/}_${{ steps.date.outputs.date }} .
 
